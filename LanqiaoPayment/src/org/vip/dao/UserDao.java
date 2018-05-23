@@ -16,7 +16,7 @@ public class UserDao {
 	private static final String UNAME = "scott";
 	private static final String UPWD = "tiger";
 
-	//查看用户是否存在
+	//查看用户是否存在////777
 	public boolean isExist(String vaccount){
 		return queryUserById(vaccount)==null?false:true;
 	}
