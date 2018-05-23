@@ -66,7 +66,7 @@
 								<h4 class="form-label">登录密码:</h4>
 								<div class="form-entity">
 									<div class="form-field">
-										<input class="ipt" type="text" name="userName" value="" placeholder="请设置登录密码" />
+										<input class="ipt" type="text" name="vpwd" value="" placeholder="请设置登录密码" />
 									</div>
 								</div>
 							</div>
@@ -74,7 +74,7 @@
 								<h4 class="form-label">再输入一次:</h4>
 								<div class="form-entity">
 									<div class="form-field">
-										<input class="ipt" type="text" name="userName" value="" placeholder="请再次输入密码" />
+										<input class="ipt" type="text" name="vpwdCipher" value="" placeholder="请再次输入密码" />
 									</div>
 								</div>
 							</div>
@@ -89,7 +89,7 @@
 								<h4 class="form-label">支付密码:</h4>
 								<div class="form-entity">
 									<div class="form-field">
-										<input class="ipt" type="text" name="userName" value="" placeholder="请设置支付密码" />
+										<input class="ipt" type="text" name="payPwd" value="" placeholder="请设置支付密码" />
 									</div>
 								</div>
 							</div>
@@ -97,7 +97,7 @@
 								<h4 class="form-label">再输入一次:</h4>
 								<div class="form-entity">
 									<div class="form-field">
-										<input class="ipt" type="text" name="userName" value="" placeholder="请再次输入密码" />
+										<input class="ipt" type="text" name="payPwdCipher" value="" placeholder="请再次输入密码" />
 									</div>
 								</div>
 							</div>

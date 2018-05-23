@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.vip.entity.User;
+
 import Util.DBUtil;
 
 public class UserDao {
@@ -16,7 +17,7 @@ public class UserDao {
 	private static final String UNAME = "scott";
 	private static final String UPWD = "tiger";
 
-	//查看用户是否存在////777
+	//查看用户是否存在1
 	public boolean isExist(String vaccount){
 		return queryUserById(vaccount)==null?false:true;
 	}
@@ -51,18 +52,19 @@ public class UserDao {
 		User user =null;
 		try{
 			DBUtil.getConnection();
-			String sql = "select * from vip where vid=?";
+			String sql = "select * from vip where vaccount=?";
 			pstmt = connection.prepareStatement(sql);
 			pstmt.setString(1,vaccount);
 			rs = pstmt.executeQuery();
 			if(rs.next()){
-				int id = rs.getInt("vid");
+				String pwd = rs.getString("vpwd");
+				String payPwd = rs.getString("payPwd");
 				String  account = rs.getString("vaccount")  ;
 				String name = rs.getString("vname") ; 
 				String card = rs.getString("vcard"); 
 				String date = rs.getString("vdate")  ;
 				String balance = rs.getString("vbalance");
-				user = new User(id,account,name,card,date,balance);
+				user = new User(pwd,payPwd,account,name,card,date,balance);
 			}
 			return user;
 		}catch (ClassNotFoundException e) {
@@ -85,17 +87,18 @@ public class UserDao {
 		List<User> userList = new ArrayList<>();
 		try {
 			DBUtil.getConnection();
-			String sql = "select * from vip where vid=?";
+			String sql = "select * from vip";
 			pstmt = connection.prepareStatement(sql);
 			rs = pstmt.executeQuery();
 			while(rs.next()) {
-				int id = rs.getInt("vid");
+				String vpwd = rs.getString("vpwd");
+				String payPwd = rs.getString("payPwd");
 				String  account = rs.getString("vaccount")  ;
 				String name = rs.getString("vname") ; 
 				String card = rs.getString("vcard"); 
 				String date = rs.getString("vdate")  ;
 				String balance = rs.getString("vbalance");
-				user = new User(id,account,name,card,date,balance);
+				user = new User(vpwd,payPwd,account,name,card,date,balance);
 				userList.add(user);
 			 }
 		return userList;

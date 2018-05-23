@@ -70,7 +70,7 @@
 						<h4 class="form-label">银行账号:</h4>
 						<div class="form-entity">
 							<div class="form-field">
-								<input class="ipt" type="text" name="userName" value="" placeholder="请输入银行账号" />
+								<input class="ipt" type="text" name="vcard" value="" placeholder="请输入银行账号" />
 							</div>
 						</div>
 					</div>

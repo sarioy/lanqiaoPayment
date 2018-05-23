@@ -1,7 +1,9 @@
 package org.vip.entity;
 
 public class User {
-	private int vid ; 
+	//会员登陆密码  会员支付密码   会员账号   会员账户名   会员身份证号   会员注册时间  会员账户余额   
+	private String vpwd;
+	private String payPwd;
 	private String vaccount  ;
 	private String vname ; 
 	private String vcard ; 
@@ -11,8 +13,9 @@ public class User {
 	public User(){
 		
 	}
-	public User(int vid,String vaccount,String vname,String vcard,String vdate,String vbalance){
-		this.vid = vid;
+	public User(String pwd,String payPwd,String vaccount,String vname,String vcard,String vdate,String vbalance){
+		this.vpwd = pwd;
+		this.payPwd = payPwd;
 		this.vaccount = vaccount;
 		this.vname = vname;
 		this.vcard = vcard;
@@ -20,11 +23,17 @@ public class User {
 		this.vbalance = vbalance;
 	}
 	
-	public int getVid() {
-		return vid;
+	public String getVpwd() {
+		return vpwd;
 	}
-	public void setVid(int vid) {
-		this.vid = vid;
+	public void setVpwd(String vpwd) {
+		this.vpwd = vpwd;
+	}
+	public String getPayPwd() {
+		return payPwd;
+	}
+	public void setPayPwd(String payPwd) {
+		this.payPwd = payPwd;
 	}
 	public String getVaccount() {
 		return vaccount;
@@ -58,7 +67,7 @@ public class User {
 	}
 	
 	public String toString(){
-		return "会员ID:"+getVid()+"/n会员账号:"+getVaccount()+"/n会员账户名:"+getVname()+
+		return "会员密码:"+getVpwd()+"\n会员支付密码："+getPayPwd()+"/n会员账号:"+getVaccount()+"/n会员账户名:"+getVname()+
 				"/n会员身份证号:"+getVcard()+"/n会员注册时间:"+getVdate()+"/n会员账户余额:"+getVbalance();
 	}
 

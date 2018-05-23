@@ -15,8 +15,18 @@ public class AddUserServlet extends HttpServlet {
 		response.setContentType("text/html; charset=utf-8");
 		
 		UserService userService = new UserService();
+		String vpwd = request.getParameter("vpwd");
+		String vpwdCipher = request.getParameter("vpwdCipher");
+		if(!vpwd.equals(vpwdCipher)){
+			System.out.println("两次密码不一致...");
+		}
+		String payPwd = request.getParameter("payPwd");
+		String payPwdCipher = request.getParameter("payPwdCipher");
+		if(!payPwd.equals(payPwdCipher)){
+			System.out.println("两次密码不一致...");
+		}
 		String vaccount = request.getParameter("vaccount");
-		String vname =request.getParameter("vname") ; 
+		String vname =request.getParameter("userName") ; 
 		String vcard = request.getParameter("vcard") ; 
 		String vdate = request.getParameter("vdate") ;
 		String vbalance = request.getParameter("vbalance");
@@ -24,5 +34,4 @@ public class AddUserServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request,response);
 	}
-
 }
