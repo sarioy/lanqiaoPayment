@@ -90,7 +90,7 @@
 							<h4 class="form-label">支付密码:</h4>
 							<div class="form-entity">
 								<div class="form-field">
-									<input class="ipt" type="text" name="userName" value=""  placeholder="请输入您的支付密码"/>
+									<input class="ipt" type="text" name="userName" value="payPwd"  placeholder="请输入您的支付密码"/>
 								</div>
 							</div>
 						</div>

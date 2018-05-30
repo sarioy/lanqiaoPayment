@@ -76,7 +76,7 @@
 								<h4 class="form-label">身份证号:</h4>
 								<div class="form-entity">
 									<div class="form-field">
-										<input class="ipt" type="text" name="vcard" value="" placeholder="请输入身份证号" />
+										<input class="ipt" type="text" name="vcard" value="" placeholder="请输入身份证号" method="post"/>
 									</div>
 								</div>
 							</div>
@@ -84,7 +84,7 @@
 								<h4 class="form-label">昵称:</h4>
 								<div class="form-entity">
 									<div class="form-field">
-										<input class="ipt" type="text" name="vname" value="" placeholder="请输入昵称" />
+										<input class="ipt" type="text" name="vname" value="" placeholder="请输入昵称" method="post"/>
 									</div>
 								</div>
 							</div>

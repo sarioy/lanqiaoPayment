@@ -12,6 +12,7 @@
 		<link rel="stylesheet" type="text/css" href="css/biz/reg.css">
 		<link rel="stylesheet" type="text/css" href="css/slide-unlock.css">
 		<link rel="stylesheet" type="text/css" href="css/dialog.css">
+		<script type="text/javascript" src="js/jquery-1.8.3.js"></script>
 		<script type="text/javascript" src="js/jquery.js"></script>
 		<script type="text/javascript" src="js/global.js"></script>
 		<script type="text/javascript" src="js/util.js"></script>
@@ -19,7 +20,17 @@
 		<script type="text/javascript" src="js/jquery-slide-unlock.js"></script>
 		<script type="text/javascript" src="js/animation.js"></script>
 		<script type="text/javascript" src="js/dialog.js"></script>
-		<script>
+		
+		<script type="text/javascript">
+		$(document).ready(function(){
+			$("input").change(function(){
+				$(this).val()
+				alert($(this).val());
+				session.setAttribute("vaccount",(this).val());
+			});
+		});
+	
+	
 			$(function () {
 				var slider = new SliderUnlock("#slider",{
 				},function(){
@@ -74,7 +85,7 @@
 						</li>
 					</ul>
 				</div>
-				<form class="form-bd" action="" id="demoForm">
+				<form class="form-bd" action="AddUserServlet" id="demoForm" method="post">
 					<div class="form-tab">
 						<ul class="form-tab-hd clearfix">
 							<li class="current">
@@ -95,7 +106,8 @@
 								</h4>
 								<div class="form-entity">
 									<div class="form-field">
-										<input class="ipt" type="text" name="userName" value="" placeholder="请输入邮箱" />
+										<input class="ipt" type="text" name="vaccount" value="" placeholder="请输入邮箱" />
+										
 									</div>
 								</div>
 							</div>
@@ -112,9 +124,13 @@
 								<a href="reg_personal_mobile_a.jsp">使用手机注册</a>
 							</div>
 							<div class="form-action clearfix">
-								<a id="personal_sendEmail" href="reg_personal_b.jsp" class="glb-btn submit-btn">
+							<!--
+								<a id="personal_sendEmail" href="AddUserServlet" class="glb-btn submit-btn">
 									<span>下一步</span>
-								</a>
+									-->  
+									<input type="submit" value="下一步" class="glb-btn submit-btn"/><br/>
+									
+								
 							</div>
 						</div>
 					</div>
